@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Cardápio Digital</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Cardápio</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Cardápio Digital</h1>
+        <p>Explore nossa deliciosa seleção de pratos.</p>
+
+        <table id="menu">
+            <!-- Produtos serão inseridos aqui dinamicamente usando JavaScript -->
+        </table>
+
+        <h2>Cadastre um Novo Produto</h2>
+        <form id="product-form">
+            <label for="product-name">Nome do Produto:</label>
+            <input type="text" id="product-name" required><br>
+
+            <label for="product-description">Descrição:</label>
+            <textarea id="product-description" required></textarea><br>
+
+            <label for="product-image">URL da Imagem:</label>
+            <input type="url" id="product-image" required><br>
+
+            <button type="submit">Adicionar Produto</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Cardápio Digital. Todos os direitos reservados.</p>
+    </footer>
+
+
+</body>
+
+</html>
