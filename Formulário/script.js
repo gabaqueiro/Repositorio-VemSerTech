@@ -46,7 +46,7 @@ function calcularSigno(event) {
 
   celulaNome.textContent = nome;
   celulaEmail.textContent = email;
-  celulaDataNascimento.textContent = dataNascimento.toLocaleDateString();
+  celulaDataNascimento.textContent = dataNascimento;
   celulaSigno.textContent = signo;
   celulaGenero.textContent = genero;
 
