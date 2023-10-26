@@ -5,49 +5,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>Cardápio Digital</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <title>Tavolito</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Cardápio</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="page-conteineir">
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="img/logotavolito.png" alt="Logo da Tavolito">
+                </a>
+            </div>
+            <div class="icons-container">
+                <div class="icon-wrapper">
+                    <div class="cart-toggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-items-count"></span>
+                    </div>
+                    <div class="menu-toggle">&#9776;</div>
+                </div>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="contact.html" target="_self">Cadastro</a></li>
+                    <li><a href="#about-us">Sobre Nós</a></li>
+                    <li><a href="#jogos">Jogos</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="container">
-        <h1>Cardápio Digital</h1>
-        <p>Explore nossa deliciosa seleção de pratos.</p>
+        <div class="cart">
+            <div class="cart-header">
+                <h3>Carrinho de Compras</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+            <div class="cart-items">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </div>
+            <div class="cart-total">
+                <h4>Total: R$ <span id="cart-total">0.00</span></h4>
+                <button class="clear-cart">Limpar Carrinho</button>
+            </div>
+        </div>
+        <main>
+            <div class="carousel">
+                <div><img
+                        src="https://images.pexels.com/photos/8111298/pexels-photo-8111298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Pessoas jogando Jenga"></div>
+                <div><img
+                        src="https://images.pexels.com/photos/8111366/pexels-photo-8111366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Mãos segurando cartas de um jogo"></div>
+                <div><img
+                        src="https://images.pexels.com/photos/6218134/pexels-photo-6218134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Pessoas jogando um jogo de tabuleiro"></div>
+            </div>
 
-        <table id="menu">
-            <!-- Produtos serão inseridos aqui dinamicamente usando JavaScript -->
-        </table>
+            <section class="about-us" id="about-us">
+                <div class="about-us-content">
+                    <h2>Sobre Nós</h2>
+                    <p>Bem-vindo à Tavolito, o seu destino definitivo para experiências de jogos inesquecíveis! Fundada
+                        com
+                        paixão por jogos de tabuleiro, a Tavolito nasceu para trazer mais diversão e conexão aos
+                        momentos
+                        especiais da vida. Somos mais do que uma empresa que apenas aluga jogos; somos contadores de
+                        histórias,
+                        criadores de memórias e amantes do jogo de tabuleiro.</p>
+                </div>
+            </section>
 
-        <h2>Cadastre um Novo Produto</h2>
-        <form id="product-form">
-            <label for="product-name">Nome do Produto:</label>
-            <input type="text" id="product-name" required><br>
+            <div class="catalog" id="jogos">
+                <div class="catalog-item" data-nome="Brazil Imperial" data-valor="50,00">
+                    <a href="#1">
+                        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS7X5ocoZ-4C6RKxOtgr5OrS_LExfwU4gqDhLv6byfTx_5SX-M_IatuXLMH9DBpgBEiK_0aQj2s_eodo0TzfMA92wYpKreYFJ-5dX3DcXvGbaKKQFlZPiwMug&usqp=CAE"
+                            alt="Brazil Imperial">
+                        <p class="item-name">Brazil Imperial</p>
+                        <p class="item-price">R$ 50,00</p>
+                        <button class="add-to-cart-btn" data-nome="Brazil Imperial" data-valor="50.00">Adicionar ao
+                            Carrinho</button>
 
-            <label for="product-description">Descrição:</label>
-            <textarea id="product-description" required></textarea><br>
+                    </a>
+                </div>
 
-            <label for="product-image">URL da Imagem:</label>
-            <input type="url" id="product-image" required><br>
+                <div class="catalog-item" data-nome="FDP - Foi de Propósito 3" data-valor="35,00">
+                    <a href="#2">
+                        <img src="https://m.media-amazon.com/images/I/61Mk0cvSP4L.__AC_SX300_SY300_QL70_ML2_.jpg"
+                            alt="FDP - Foi de Propósito 3">
+                        <p class="item-name">FDP - Foi de Propósito 3</p>
+                        <p class="item-price">R$ 35,00</p>
+                        <button class="add-to-cart-btn" data-nome="FDP - Foi de Propósito 3"
+                            data-valor="35.00">Adicionar ao Carrinho</button>
 
-            <button type="submit">Adicionar Produto</button>
-        </form>
+                    </a>
+                </div>
+
+                <div class="catalog-item" data-nome="Jogo Detetive - Estrela" data-valor="45,00">
+                    <a href="#3">
+                        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSb6cgFr7wlJE8MBd6XTyFxiSHJNfNwAHqiN2v_eJkq_Z6e0Qjop-QbP9yDtXoGaZ5VHoEnz6B2AQPMwoSAXQjs6LGgvN5bZHaiJ6OjlMQjT89JHs6wWKEHRg&usqp=CAE"
+                            alt="Jogo Detetive - Estrela">
+                        <p class="item-name">Jogo Detetive - Estrela</p>
+                        <p class="item-price">R$ 45,00</p>
+                        <button class="add-to-cart-btn" data-nome="Jogo Detetive" data-valor="45.00">Adicionar ao
+                            Carrinho</button>
+                    </a>
+                </div>
+
+                <div class="catalog-item" data-nome="Wingspan - Grok" data-valor="55,00">
+                    <a href="#4">
+                        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQLM4D9x7FvOr6Vf72phG9z3jzZ6rhp005L31B5WBKhd4qwWe_X1iD4iokkYPtgEFkHVy_0bSAVA2BSfwU1Gr6eR18frYIjW-Y5oQSorDgl_o7hHUZ4AdjN"
+                            alt="Wingspan - Grok">
+                        <p class="item-name">Wingspan - Grok</p>
+                        <p class="item-price">R$ 55,00</p>
+                        <button class="add-to-cart-btn" data-nome="Wingspan - Grok" data-valor="55.00">Adicionar ao
+                            Carrinho</button>
+                    </a>
+                </div>
+
+                <div class="catalog-item" data-nome="Perfil 7 - Grow" data-valor="40,00">
+                    <a href="#5">
+                        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTcpRDFKPXQNnKaDKo0EzsOo6rB70J7VnAIyV7-UQVFuT78bY30Q72-yFifVfw3bCpkuqL0PQ3rM2BW6xDt3vVABJ53zA_XBzmvdxH5rsjTioUQIXUbWPCS"
+                            alt="Perfil 7 - Grow">
+                        <p class="item-name">Perfil 7 - Grow</p>
+                        <p class="item-price">R$ 40,00</p>
+                        <button class="add-to-cart-btn" data-nome="Perfil 7 - Grow" data-valor="40.00">Adicionar ao
+                            Carrinho</button>
+                    </a>
+                </div>
+                <div class="catalog-item" data-nome="Perfil 7 - Grow" data-valor="40,00">
+                    <a href="#5">
+                        <img src="https://m.media-amazon.com/images/I/91k48t4rl6L._AC_SX466_.jpg"
+                            alt="Galápagos, Sintonia (Wavelength)">
+                        <p class="item-name">Galápagos, Sintonia</p>
+                        <p class="item-price">R$ 40,00</p>
+                        <button class="add-to-cart-btn" data-nome="Galápagos, Sintonia" data-valor="60.00">Adicionar ao
+                            Carrinho</button>
+                    </a>
+                </div>
+            </div>
     </div>
+    </main>
+    </div>
+    <section class="table">
+        <h2 class="h2-table">Jogos Mais Vendidos</h2>
 
-    <footer>
-        <p>&copy; 2023 Cardápio Digital. Todos os direitos reservados.</p>
+        <table>
+            <tr>
+                <th>Posição</th>
+                <th>Nome do Jogo</th>
+                <th>Plataforma</th>
+                <th>Quantidade Vendida</th>
+            </tr>
+            <tr>
+                <td>1º</td>
+                <td>The Last of Us Part II</td>
+                <td>PlayStation 4</td>
+                <td>5,000,000</td>
+            </tr>
+            <tr>
+                <td>2º</td>
+                <td>Red Dead Redemption 2</td>
+                <td>PlayStation 4, Xbox One</td>
+                <td>8,200,000</td>
+            </tr>
+            <tr>
+                <td>3º</td>
+                <td>The Legend of Zelda: Breath of the Wild</td>
+                <td>Nintendo Switch, Wii U</td>
+                <td>6,500,000</td>
+            </tr>
+            <tr>
+                <td>4º</td>
+                <td>Fortnite</td>
+                <td>PlayStation 4, Xbox One, Nintendo Switch, PC</td>
+                <td>20,000,000</td>
+            </tr>
+            <tr>
+                <td>5º</td>
+                <td>Minecraft</td>
+                <td>Various Platforms</td>
+                <td>30,000,000</td>
+            </tr>
+        </table>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="img/logosemnome.png" alt="Logo Tavolito">
+            </div>
+            <div class="footer-links">
+                <a href="#">Blog</a>
+                <a href="#">Suporte</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><img src="img/whatsapp.png" alt="whatsapp"></a>
+                <a href="#" class="social-icon"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="#" class="social-icon"><img src="img/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
     </footer>
-
-
 </body>
+<script src="script.js"></script>
 
 </html>

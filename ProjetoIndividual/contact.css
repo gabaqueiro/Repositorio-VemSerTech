@@ -1,0 +1,250 @@
+/* Reset de Padrões */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos Globais */
+body {
+    position: relative;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Estilos do Cabeçalho */
+header {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.page-container {
+    max-width: 100%; /* Define a largura máxima do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+    padding: 0 20px; /* Adiciona um preenchimento interno para o contêiner (ajuste conforme necessário) */
+}
+
+
+.logo img {
+    width: 180px;
+}
+
+.menu {
+    display: none;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu ul {
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu li {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    list-style-type: none;
+    text-decoration: none; /* Remove o sublinhado */
+    color: white; /* Cor do texto branca */
+    text-align: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.menu.active {
+    position: fixed; /* Use 'fixed' para manter o menu fixo na tela ao rolar */
+    top: 60px; /* Distância do topo da tela */
+    right: 0; /* Alinha o menu à borda direita da tela */
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 9999;
+    width: 250px; /* Largura do menu (ajuste conforme necessário) */
+}
+
+/* Adicione este estilo ao seu CSS para posicionar os ícones lado a lado */
+.icons-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items:end;
+}
+
+.cart-toggle,
+.menu-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255); /* Cor dos ícones */
+    margin-right: 40px; /* Espaçamento entre os ícones (ajuste conforme necessário) */
+}
+
+.signup-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px 50px 20px 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border: solid #000000c9;
+}
+
+.signup-form label,
+.signup-form input {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.signup-form button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.signup-form button:hover {
+    background-color: #218838;
+}
+
+/* Estilo para o cabeçalho do formulário */
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Estilo para mensagens de erro */
+.error-message {
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+/* Estilo para mensagens de sucesso */
+.success-message {
+    color: #28a745;
+    margin-top: 10px;
+}
+
+
+.footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 5px 0; /* Reduz o preenchimento vertical */
+    font-size: 14px; /* Reduz o tamanho da fonte */
+}
+
+.footer-links {
+    margin-bottom: 5px; /* Adiciona uma pequena margem na parte inferior do .footer-links */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px; /* Reduz a margem entre os links */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #28a745;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px; /* Reduz a margem entre os ícones sociais */
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #28a745;
+}
+
+.footer-logo img {
+    width: 80px; /* Defina o tamanho da largura conforme desejado */
+    height: auto; /* Mantém a proporção da imagem, ajustando automaticamente a altura */
+}
+
+.footer-social img{
+    width: 30px; /* Defina o tamanho da largura conforme desejado */
+}
+
+/* Estilos do Carrinho e Modal */
+.cart {
+    position: fixed;
+    top: 60px;
+    right: -400px;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+
+.cart.active {
+    right: 0;
+    cursor: pointer;
+}
+
+
+/* Estilos para telas menores (máx. largura 600px) */
+@media screen and (max-width: 768px) {
+    .signup-form label,
+    .signup-form input {
+        font-size: 14px;
+        padding: 6px;
+        margin-bottom: 8px;
+    }
+
+    .signup-form button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .signup-container {
+        padding: 20px 30px 20px 20px;
+        margin: 10px 20px 10px 20px;
+    }
+    
+    header {
+        width: 100%;
+    }
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
