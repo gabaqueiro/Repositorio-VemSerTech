@@ -177,7 +177,7 @@ header {
 .catalog-item img {
     width: 150px;
     height: 120px;
-    object-fit: cover;
+    object-fit: scale-down;
     border: 2px solid white;
 }
 
@@ -194,11 +194,12 @@ table {
     font-family: Arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+
 }
 
 th, td {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     padding: 8px;
 }
 
