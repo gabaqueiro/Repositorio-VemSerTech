@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resultado.css">
+  <title>Resultado do Churrasco</title>
+</head>
+<body>
+
+<div class="container">
+  <h1>Resultado do Churrasco</h1>
+
+  <div id="resultado" class="resultado-container"></div>
+
+  <script>
+    // Função para obter parâmetros da URL
+    function obterParametrosDaURL() {
+      var params = new URLSearchParams(window.location.search);
+      return {
+        quantidadeCarne: params.get("quantidadeCarne"),
+        quantidadePaoDeAlho: params.get("quantidadePaoDeAlho"),
+        quantidadeCarvao: params.get("quantidadeCarvao"),
+        quantidadeSal: params.get("quantidadeSal"),
+        quantidadeGelo: params.get("quantidadeGelo"),
+        quantidadeRefrigerante: params.get("quantidadeRefrigerante"),
+        quantidadeAgua: params.get("quantidadeAgua"),
+        quantidadeCerveja: params.get("quantidadeCerveja"),
+      };
+    }
+
+    // Função para exibir resultados na página
+    function exibirResultados() {
+      var resultados = obterParametrosDaURL();
+      var resultadoHTML = `
+        <h2>Resultado do Cálculo</h2>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td>Carne</td>
+                <td>${resultados.quantidadeCarne} KG</td>
+            </tr>
+            <tr>
+                <td>Pão de Alho</td>
+                <td>${resultados.quantidadePaoDeAlho}</td>
+            </tr>
+            <tr>
+                <td>Carvão</td>
+                <td>${resultados.quantidadeCarvao} KG</td>
+            </tr>
+            <tr>
+                <td>Sal</td>
+                <td>${resultados.quantidadeSal} KG</td>
+            </tr>
+            <tr>
+                <td>Gelo</td>
+                <td>${resultados.quantidadeGelo} KG</td>
+            </tr>
+            <tr>
+                <td>Refrigerante</td>
+                <td>${resultados.quantidadeRefrigerante} garrafas de 2L</td>
+            </tr>
+            <tr>
+                <td>Água</td>
+                <td>${resultados.quantidadeAgua} garrafas de 1L</td>
+            </tr>
+            <tr>
+                <td>Cerveja</td>
+                <td>${resultados.quantidadeCerveja} garrafas de 600ml</td>
+            </tr>
+        </table>
+      `;
+
+      // Exibir resultado na página
+      document.getElementById("resultado").innerHTML = resultadoHTML;
+    }
+
+    // Chamar a função ao carregar a página
+    window.onload = exibirResultados;
+  </script>
+</div>
+
+</body>
+</html>

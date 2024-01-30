@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Churrasco</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Calculadora de Churrasco</h1>
+
+  <form id="churrascoForm">
+    <div class="form-group">
+      <label for="homens">Quantidade de Homens:</label>
+      <div class="input-group">
+        <button type="button" class="input-group__button" onclick="decrement('homens')">-</button>
+        <input type="number" id="homens" name="homens" min="0" value="0" required>
+        <button type="button" class="input-group__button" onclick="increment('homens')">+</button>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="mulheresAdultos">Quantidade de Mulheres:</label>
+      <div class="input-group">
+        <button type="button" class="input-group__button" onclick="decrement('mulheresAdultos')">-</button>
+        <input type="number" id="mulheresAdultos" name="mulheresAdultos" min="0" value="0" required>
+        <button type="button" class="input-group__button" onclick="increment('mulheresAdultos')">+</button>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="criancas">Quantidade de Crianças:</label>
+      <div class="input-group">
+        <button type="button" class="input-group__button" onclick="decrement('criancas')">-</button>
+        <input type="number" id="criancas" name="criancas" min="0" value="0" required>
+        <button type="button" class="input-group__button" onclick="increment('criancas')">+</button>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="pessoasBebem">Quantidade de Pessoas que Bebem Bebidas Alcoólicas:</label>
+      <div class="input-group">
+        <button type="button" class="input-group__button" onclick="decrement('pessoasBebem')">-</button>
+        <input type="number" id="pessoasBebem" name="pessoasBebem" min="0" value="0" required>
+        <button type="button" class="input-group__button" onclick="increment('pessoasBebem')">+</button>
+      </div>
+    </div>
+
+    <input type="submit" value="Calcular">
+  </form>
+
+  <div id="resultado" class="resultado-container"></div>
+</div>
+
+<script src="home.js"></script>
+
+</body>
+</html>
